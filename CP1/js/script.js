@@ -71,9 +71,10 @@ function flipCard() {
 
   if (chosenCards.length === 2) {
     lockBoard = true; //Khóa click
-    setTimeout(() => {
+    let interval = setInterval(() => {
       checkMatch();
       lockBoard = false; //Mở lại sau khi kiểm tra
+      clearInterval(interval); // Dừng interval sau lần chạy đầu tiên
     }, 800);
   }
 }
