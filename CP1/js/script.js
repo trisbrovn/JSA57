@@ -62,8 +62,8 @@ function checkMatch() {
 function flipCard() {
   const id = this.getAttribute("data-id");
 
-  if (lockBoard) return;           //Chặn click khi đang kiểm tra
-  if (chosenIds.includes(id)) return; // tránh click 2 lần cùng thẻ
+  if (lockBoard) return;              //Chặn click khi đang kiểm tra
+  if (chosenIds.includes(id)) return; // Tránh click 2 lần cùng thẻ
 
   chosenCards.push(gameArray[id].name);
   chosenIds.push(id);
