@@ -10,5 +10,3 @@ const students = [
   { id: 9, name: "Ivy" },
   { id: 10, name: "Jack" }
 ];
-
-console.log(students);
