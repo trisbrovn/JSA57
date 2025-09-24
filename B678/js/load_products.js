@@ -1,16 +1,16 @@
-// lay du lieu tu API DummyJSON https://dummyjson.com/
+// Lay du lieu tu API DummyJSON https://dummyjson.com/
 const API_URL_ROOT = "https://dummyjson.com/";
 
-// ham render san pham len giao dien
+// ham render san pham len giao dien ----------------------
 function renderProducts(products) {
   const container = document.getElementById("product_list");
   container.innerHTML = ""; // xoa code
   // chay vong lap de tao tung san pham
   // ?. kiem tra neu danh sach khac null -> thuc hien
   products?.forEach((p) => {
-    const productHTML = `
-        <div class="col">
-            <div class="card shadow-sm">
+    const productHTML = ` 
+            <div class="col">
+              <div class="card shadow-sm">
                 <img src="${p.thumbnail}" alt="hinh anh san pham" />
                 <div class="card-body">
                   <h3 class="card-title">${p.title}</h3>
@@ -25,27 +25,27 @@ function renderProducts(products) {
                     </button>
                   </div>
                 </div>
+              </div>
             </div>
-        </div>
-    `;
+        `;
     // them san pham vao container
     container.innerHTML += productHTML;
   });
 }
 
-// ham lay san phan API
+// ham lay san pham tu API ----------------------
 function loadProductsFromAPI() {
-    fetch(API_URL_ROOT + "products", {methed: "GET"})
-        .then(Response => Response.json()) // chuyen thanh object
-        .then(data => {
-            console.log(data);
-            // goi ham load san pham len giao dien
-            renderProducts(data.products)
-        })
-        .catch((err) => console.error("Loi API:", err))
+  fetch(API_URL_ROOT + "products", { method: "GET" })
+    .then((response) => response.json()) // chuyen thanh object
+    .then((data) => {
+      console.log(data);
+      // goi ham load san pham len giao dien
+      renderProducts(data.products);
+    })
+    .catch((err) => console.error("Loi API:", err));
 }
 
-// goi ham khi load web
+// goi ham khi load web -----------------------
 document.addEventListener("DOMContentLoaded", function () {
   loadProductsFromAPI();
 });
