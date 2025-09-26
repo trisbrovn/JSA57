@@ -1,0 +1,40 @@
+:root {
+  --card-bg: #ffffffaa;
+  --glass: rgba(255, 255, 255, 0.6);
+}
+
+body {
+  background: linear-gradient(135deg, #89f7fe 0%, #66a6ff 100%);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  font-family: Inter, system-ui, Segoe UI, Roboto, 'Helvetica Neue', Arial;
+}
+
+.weather-card {
+  backdrop-filter: blur(6px);
+  background: var(--glass);
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, .15);
+  padding: 1.25rem;
+  width: 100%;
+  max-width: 720px;
+}
+
+.weather-icon {
+  width: 96px;
+  height: 96px;
+}
+
+.muted {
+  opacity: .85;
+}
+
+@media (max-width: 576px) {
+  .weather-icon {
+    width: 72px;
+    height: 72px;
+  }
+}

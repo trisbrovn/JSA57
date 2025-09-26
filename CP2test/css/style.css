@@ -1,0 +1,29 @@
+body {
+    background: linear-gradient(135deg, #87CEEB, #ADD8E6);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Poppins', sans-serif; 
+}
+
+.weather-card {
+    max-width: 600px;
+    width: 100%;
+    background-color: #ffffff;
+    border-radius: 15px;
+}
+
+.weather-icon {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+}
+
+/* Điều chỉnh responsive cho màn hình nhỏ */
+@media (max-width: 576px) {
+    .btn-lg {
+        padding: 0.5rem 0.5rem;
+        font-size: 0.875rem;
+    }
+}
